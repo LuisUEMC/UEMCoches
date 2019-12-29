@@ -1,0 +1,13 @@
+C:\Users\Luis Burgos Vidales\source\repos\PracticaCochesFinal\logicaNegocio\bin\Debug\netstandard2.0\logicaNegocio.deps.json
+C:\Users\Luis Burgos Vidales\source\repos\PracticaCochesFinal\logicaNegocio\bin\Debug\netstandard2.0\logicaNegocio.dll
+C:\Users\Luis Burgos Vidales\source\repos\PracticaCochesFinal\logicaNegocio\bin\Debug\netstandard2.0\logicaNegocio.pdb
+C:\Users\Luis Burgos Vidales\source\repos\PracticaCochesFinal\logicaNegocio\obj\Debug\netstandard2.0\logicaNegocio.AssemblyInfoInputs.cache
+C:\Users\Luis Burgos Vidales\source\repos\PracticaCochesFinal\logicaNegocio\obj\Debug\netstandard2.0\logicaNegocio.AssemblyInfo.cs
+C:\Users\Luis Burgos Vidales\source\repos\PracticaCochesFinal\logicaNegocio\obj\Debug\netstandard2.0\logicaNegocio.dll
+C:\Users\Luis Burgos Vidales\source\repos\PracticaCochesFinal\logicaNegocio\obj\Debug\netstandard2.0\logicaNegocio.pdb
+C:\Users\Luis Burgos Vidales\source\repos\PracticaCochesFinal\logicaNegocio\obj\Debug\netstandard2.0\logicaNegocio.csprojAssemblyReference.cache
+C:\Users\Luis Burgos Vidales\source\repos\PracticaCochesFinal\logicaNegocio\bin\Debug\netstandard2.0\AccesoDatos.dll
+C:\Users\Luis Burgos Vidales\source\repos\PracticaCochesFinal\logicaNegocio\bin\Debug\netstandard2.0\transversal.dll
+C:\Users\Luis Burgos Vidales\source\repos\PracticaCochesFinal\logicaNegocio\bin\Debug\netstandard2.0\AccesoDatos.pdb
+C:\Users\Luis Burgos Vidales\source\repos\PracticaCochesFinal\logicaNegocio\bin\Debug\netstandard2.0\transversal.pdb
+C:\Users\Luis Burgos Vidales\source\repos\PracticaCochesFinal\logicaNegocio\obj\Debug\netstandard2.0\logicaNegocio.csproj.CopyComplete

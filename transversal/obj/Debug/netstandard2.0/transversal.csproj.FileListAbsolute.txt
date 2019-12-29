@@ -1,0 +1,8 @@
+C:\Users\Luis Burgos Vidales\source\repos\PracticaCochesFinal\transversal\bin\Debug\netstandard2.0\transversal.deps.json
+C:\Users\Luis Burgos Vidales\source\repos\PracticaCochesFinal\transversal\bin\Debug\netstandard2.0\transversal.dll
+C:\Users\Luis Burgos Vidales\source\repos\PracticaCochesFinal\transversal\obj\Debug\netstandard2.0\transversal.AssemblyInfoInputs.cache
+C:\Users\Luis Burgos Vidales\source\repos\PracticaCochesFinal\transversal\obj\Debug\netstandard2.0\transversal.AssemblyInfo.cs
+C:\Users\Luis Burgos Vidales\source\repos\PracticaCochesFinal\transversal\bin\Debug\netstandard2.0\transversal.pdb
+C:\Users\Luis Burgos Vidales\source\repos\PracticaCochesFinal\transversal\obj\Debug\netstandard2.0\transversal.dll
+C:\Users\Luis Burgos Vidales\source\repos\PracticaCochesFinal\transversal\obj\Debug\netstandard2.0\transversal.pdb
+C:\Users\Luis Burgos Vidales\source\repos\PracticaCochesFinal\transversal\obj\Debug\netstandard2.0\transversal.csprojAssemblyReference.cache
