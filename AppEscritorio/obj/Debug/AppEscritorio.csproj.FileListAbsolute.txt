@@ -17,3 +17,4 @@ C:\Users\Luis Burgos Vidales\source\repos\PracticaCochesFinal\AppEscritorio\obj\
 C:\Users\Luis Burgos Vidales\source\repos\PracticaCochesFinal\AppEscritorio\bin\Debug\System.Data.SqlClient.dll
 C:\Users\Luis Burgos Vidales\source\repos\PracticaCochesFinal\AppEscritorio\bin\Debug\System.Data.SqlClient.xml
 C:\Users\Luis Burgos Vidales\source\repos\PracticaCochesFinal\AppEscritorio\obj\Debug\AppEscritorio.Home.resources
+C:\Users\Luis Burgos Vidales\source\repos\PracticaCochesFinal\AppEscritorio\obj\Debug\AppEscritorio.subirCocheManual.resources

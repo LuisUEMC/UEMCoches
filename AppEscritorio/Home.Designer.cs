@@ -33,6 +33,7 @@
             this.btnSubirCoches = new System.Windows.Forms.Button();
             this.btnGuardarCoches = new System.Windows.Forms.Button();
             this.lblInfo = new System.Windows.Forms.Label();
+            this.btnSubirManual = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -64,7 +65,7 @@
             this.btnSubirCoches.Name = "btnSubirCoches";
             this.btnSubirCoches.Size = new System.Drawing.Size(164, 60);
             this.btnSubirCoches.TabIndex = 2;
-            this.btnSubirCoches.Text = "Subir Coches";
+            this.btnSubirCoches.Text = "Subir Coches desde XML";
             this.btnSubirCoches.UseVisualStyleBackColor = true;
             this.btnSubirCoches.Click += new System.EventHandler(this.btnSubirCoches_Click);
             // 
@@ -88,11 +89,22 @@
             this.lblInfo.TabIndex = 4;
             this.lblInfo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // btnSubirManual
+            // 
+            this.btnSubirManual.Location = new System.Drawing.Point(335, 158);
+            this.btnSubirManual.Name = "btnSubirManual";
+            this.btnSubirManual.Size = new System.Drawing.Size(141, 60);
+            this.btnSubirManual.TabIndex = 5;
+            this.btnSubirManual.Text = "subir coche manualmente";
+            this.btnSubirManual.UseVisualStyleBackColor = true;
+            this.btnSubirManual.Click += new System.EventHandler(this.btnSubirManual_Click);
+            // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnSubirManual);
             this.Controls.Add(this.lblInfo);
             this.Controls.Add(this.btnGuardarCoches);
             this.Controls.Add(this.btnSubirCoches);
@@ -112,5 +124,6 @@
         private System.Windows.Forms.Button btnSubirCoches;
         private System.Windows.Forms.Button btnGuardarCoches;
         private System.Windows.Forms.Label lblInfo;
+        private System.Windows.Forms.Button btnSubirManual;
     }
 }

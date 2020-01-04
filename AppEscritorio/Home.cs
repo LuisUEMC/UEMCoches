@@ -13,20 +13,9 @@ namespace AppEscritorio
     public partial class Home : Form
     {
         logicaNegocio.clase c = new logicaNegocio.clase();
-        public Home(int idu)
+        public Home()
         {
-            //comprobamos que se ha hecho el login, si no se redirige al login
-            if (idu == 0)
-            {
-                this.Close();
-                login l = new login();
-                l.Show();
-            }
-            else
-            {
-                InitializeComponent();
-            }
-            
+              InitializeComponent();
         }
 
         //codigo inutil
@@ -54,6 +43,14 @@ namespace AppEscritorio
                 c.guardarCochesBD(dialog.FileName);
                 lblInfo.Text = "vehiculos añadidos con exito!";
             }
+        }
+
+        //este boton redirige al windows form de insercion manual
+        private void btnSubirManual_Click(object sender, EventArgs e)
+        {
+            subirCocheManual scm = new subirCocheManual();
+            scm.Show();
+            this.Close();  
         }
     }
 }

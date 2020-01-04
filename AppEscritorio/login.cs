@@ -51,12 +51,11 @@ namespace AppEscritorio
                 }
                 else
                 {
-                    //como el login es correcto, se cierra esta ventana y se muestra la de home mandando el id_usuario
+                    //como el login es correcto, se cierra esta ventana y se muestra la de home
                     lblInfo.Text = "Te has loggeado con exito";
-                    Thread.Sleep(1500);
-                    Home h = new Home(id_usuario);
-                    this.Close();
+                    Home h = new Home();
                     h.Show();
+                    this.Hide();
                 }
             }
         }

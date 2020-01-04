@@ -278,5 +278,18 @@ namespace AccesoDatos
             }
             conexion.Close();
         }
+
+        //funcion que inserta un solo vehiculo, se usa en la insercion manual
+        public void insertarVehiculo(transversal.vehiculo ve)
+        {
+            string cadenaConsulta;
+            conexion.Open();
+            
+            cadenaConsulta = "INSERT INTO coches VALUES ('" + ve.GSNombre + "'," + ve.GSAno + ",'" + ve.GSPrestaciones + "','" + ve.GSDisponible + "','" + ve.GSColor + "'," + ve.GSPuertas + ",'" + ve.GSCombustible + "'," + ve.GSValoracion + "," + Convert.ToDecimal(ve.GSPrecio) + ")";
+            SqlCommand myCommand = new SqlCommand(cadenaConsulta, conexion);
+            
+            myCommand.ExecuteNonQuery();
+            conexion.Close();
+        }
     }
 }

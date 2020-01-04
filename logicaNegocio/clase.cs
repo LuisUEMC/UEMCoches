@@ -167,8 +167,15 @@ namespace logicaNegocio
 
                 AccesoDatos.funciones f = new AccesoDatos.funciones();
                 f.insertarVehiculos(vehiculos);
-
             }
+        }
+
+        //funcion que crea una clase vehiculo con los datos de la insercion manual y se la manda a la capa
+        //acceso a datos para la insercion de un solo vehiculo
+        public void guardarVehiculo(string modelo, int ano, string prestaciones, string color, int puertas, string combustible, int valoracion, double precio)
+        {
+            transversal.vehiculo ve = new transversal.vehiculo(modelo, ano, prestaciones, true, color, puertas, combustible, valoracion, precio, 0);
+            f.insertarVehiculo(ve);
         }
     }
 }
