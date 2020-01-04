@@ -29,7 +29,7 @@
             <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="tbUsuario" ErrorMessage="Introduce el nombre de usuario" ForeColor="Red" CssClass="auto-style2"></asp:RequiredFieldValidator>
             <br class="auto-style2" />
             <span class="auto-style2">Contraseña:&nbsp; </span>
-            <asp:TextBox ID="tbPass" runat="server" CssClass="auto-style2"></asp:TextBox>
+            <asp:TextBox ID="tbPass" runat="server" CssClass="auto-style2" TextMode="Password"></asp:TextBox>
             <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="tbPass" ErrorMessage="Introduce la contraseña" ForeColor="Red" CssClass="auto-style2"></asp:RequiredFieldValidator>
             <br class="auto-style2" />
             <br class="auto-style2" />

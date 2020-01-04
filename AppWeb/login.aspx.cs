@@ -17,18 +17,31 @@ namespace AppWeb
 
         protected void btnEntrar_Click(object sender, EventArgs e)
         {
-
+            //mandamos el usuario y contraseña a la logica de negocio para que lo valide
             logicaNegocio.clase c = new logicaNegocio.clase();
             int id_usuario;
             id_usuario = c.login(tbUsuario.Text, tbPass.Text);
+            //primera comprobacion de usuario inexistente
             if (id_usuario == 0)
             {
                 lblInfo.Text = "No estas registrado o has introducido credenciales incorrectas";
             }
             else
             {
-                lblInfo.Text = "Te has loggeado con exito";
-                Response.Redirect("home.aspx?idu=" + id_usuario);
+                //segunda comprobacion para que no pueda logearse un usuario de tipo admin
+                transversal.usuario usu = c.buscarUsuario(tbUsuario.Text);
+                if (usu.GSTipo != "comun")
+                {
+                    lblInfo.Text = "Aqui no puedes entrar como administrador";
+                }
+                else
+                {
+                    //finalmente el loggin correcto
+                    lblInfo.Text = "Te has loggeado con exito";
+                    Response.Redirect("home.aspx?idu=" + id_usuario);
+                }
+
+                
             }
         }
 

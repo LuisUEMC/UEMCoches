@@ -10,9 +10,11 @@ namespace AppWeb
 {
     public partial class misCoches : System.Web.UI.Page
     {
+        //inicializamos a las funciones de la logica de negocio
         logicaNegocio.clase c = new logicaNegocio.clase();
         protected void Page_Load(object sender, EventArgs e)
         {
+            //comprobamos que se ha hecho el login, si no redirigimos
             String id_usuario = Request.QueryString["idu"];
             if (Request.QueryString["idu"] == null)
             {
@@ -20,11 +22,13 @@ namespace AppWeb
             }
             else
             {
+                //rellenamos un arraylist con los alquileres que corresponden al usuario
                 ArrayList alquileres = new ArrayList();
                 alquileres = c.mostrarAlquileres(Convert.ToInt32(id_usuario));
 
                 List<Label> labels = new List<Label>();
 
+                //los mostramos
                 for (int i = 0; i<alquileres.Count; i++)
                 {
                     transversal.alquilan al = (transversal.alquilan)alquileres[i];

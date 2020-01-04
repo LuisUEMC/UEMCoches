@@ -7,43 +7,59 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data.SqlClient;
 using System.Threading;
+using System.Collections;
 
 namespace AppWeb
 {
     public partial class Registro : System.Web.UI.Page
     {
-        
+        logicaNegocio.clase c = new logicaNegocio.clase();
         protected void Page_Load(object sender, EventArgs e)
         {
             
         }
 
+        //boton del registro de un nuevo usuario
         protected void btnRegistro_Click(object sender, EventArgs e)
         {
-            
-
+            //comprobamos que la edad no sea menor de 18 años
             if (Convert.ToInt32(tbEdad.Text) < 18)
             {
                 lblEdad.Visible = true;
             }
             else
             {
+                //evitamos que el usuario se pueda registrar como administrador
                 if (tbUsuario.Text == "admin" || tbPass.Text == "admin")
                 {
                     lblInfo.Text = "No te puedes registrar con esas credenciales";
                 }
                 else
                 {
-                    //inicializamos las clases
-                    logicaNegocio.clase c = new logicaNegocio.clase();
+                    //comprobamos que el nombre de usuario ya existe llamando a la funcion que busca un usuario
+                    //en funcion de su nombre de usuario
+                    transversal.usuario usu = c.buscarUsuario(tbUsuario.Text);
 
-                    c.registrarUsuario(tbNombre.Text, tbApellidos.Text, Convert.ToInt32(tbEdad.Text), tbUsuario.Text, tbPass.Text);
+                    //si devuelve null es que no existe con lo cual se registra con exito
+                    if (usu == null)
+                    {
+                        //inicializamos las clases
+                        logicaNegocio.clase c = new logicaNegocio.clase();
 
-                    lblInfo.Text = "Te has registrado con exito!!....Redirigiendo....";
+                        c.registrarUsuario(tbNombre.Text, tbApellidos.Text, Convert.ToInt32(tbEdad.Text), tbUsuario.Text, tbPass.Text);
 
-                    Thread.Sleep(1500);
+                        lblInfo.Text = "Te has registrado con exito!!....Redirigiendo....";
 
-                    Response.Redirect("login.aspx");
+                        Thread.Sleep(1500);
+
+                        Response.Redirect("login.aspx");
+                    }
+                    //si no es null, es que el usuario si existe (pequeño chiste)
+                    else
+                    {
+                        lblInfo.Text = "Nombre de usuario repetido, prueba con: " + usu.GSUser + "123";
+                    }
+                    
                 }
                 
                 

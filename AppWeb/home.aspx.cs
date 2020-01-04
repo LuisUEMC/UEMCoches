@@ -10,9 +10,11 @@ namespace AppWeb
 {
     public partial class home : System.Web.UI.Page
     {
+        //inicializamos las funciones de la logica de negocio
         logicaNegocio.clase c = new logicaNegocio.clase();
         protected void Page_Load(object sender, EventArgs e)
         {
+            //comprobamos que se ha hecho login, si no es asi, redirecciona al login
             string id_usuario = Request.QueryString["idu"];
             if (Request.QueryString["idu"] == null)
             {
@@ -20,14 +22,16 @@ namespace AppWeb
             }
             else
             {
+                //cargamos todos los vehiculos de la base de datos
                 ArrayList vehiculos = new ArrayList();
                 vehiculos = c.mostrarVehiculos();
 
-                //inicializamos los componentes
+                //inicializamos los componentes que vamos a utilizar dinamicamente
                 List<Button> buttons = new List<Button>();
                 List<Label> labels = new List<Label>();
                 List<Image> images = new List<Image>();
 
+                //rellenamos los componentes con los datos de los vehiculos
                 for (int i = 0; i < vehiculos.Count; i++)
                 {
                     transversal.vehiculo ve = (transversal.vehiculo)vehiculos[i];
@@ -35,6 +39,7 @@ namespace AppWeb
                     //boton de seleccionar coche
                     Button newButton = new Button();
                     newButton.Text = "Alquilar";
+                    //funcion para que al hacer click en el boton redireccione a la pagina de alquiler del coche correspondiente
                     newButton.Click += delegate { Response.Redirect("alquilerCoche.aspx?idu=" + id_usuario + "&idc=" + ve.GSIdVehiculo.ToString()); };
                     buttons.Add(newButton);
 
@@ -51,6 +56,7 @@ namespace AppWeb
                     images.Add(ImgCoche);
                 }
 
+                //añadimos los componentes al panel
                 for (int j = 0; j < vehiculos.Count; j++)
                 {
                     Panel1.Controls.Add(labels[j]);
@@ -60,11 +66,14 @@ namespace AppWeb
             }
         }
 
+        //el boton que lleva a mis coches alquilados
         protected void Button1_Click(object sender, EventArgs e)
         {
             Response.Redirect("misCoches.aspx?idu=" + Request.QueryString["idu"]);
         }
 
+        //este boton se encarga de refrescar el panel con el filtro correspondiente
+        //no comento el codigo interior porque es el mismo pero con los vehiculos filtrados
         protected void btnBuscar_Click(object sender, EventArgs e)
         {
             Panel1.Controls.Clear();

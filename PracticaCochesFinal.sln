@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "logicaNegocio", "logicaNego
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AccesoDatos", "AccesoDatos\AccesoDatos.csproj", "{F1B8A3C6-A65E-40CC-A811-413B12292B85}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "transversal", "transversal\transversal.csproj", "{9D3E4367-74C8-4314-B30E-BA47FBEFF798}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "transversal", "transversal\transversal.csproj", "{9D3E4367-74C8-4314-B30E-BA47FBEFF798}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppEscritorio", "AppEscritorio\AppEscritorio.csproj", "{2315A530-B275-4008-A0B8-A04A6733AD1A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{9D3E4367-74C8-4314-B30E-BA47FBEFF798}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9D3E4367-74C8-4314-B30E-BA47FBEFF798}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9D3E4367-74C8-4314-B30E-BA47FBEFF798}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2315A530-B275-4008-A0B8-A04A6733AD1A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2315A530-B275-4008-A0B8-A04A6733AD1A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2315A530-B275-4008-A0B8-A04A6733AD1A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2315A530-B275-4008-A0B8-A04A6733AD1A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
