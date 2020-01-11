@@ -39,9 +39,9 @@ namespace AccesoDatos
         }
 
         //funcion que devuelve un arraylist de todos los usuarios
-        public ArrayList allUsuarios()
+        public List<transversal.usuario> allUsuarios()
         {
-            ArrayList usuarios = new ArrayList();
+            List<transversal.usuario> usuarios = new List<transversal.usuario>();
             conexion.Open();
             string cadenaConsulta;
             try
@@ -63,15 +63,15 @@ namespace AccesoDatos
             {
                 conexion.Close();
             }
-            //devolvemos el arraylist de usuarios
+            //devolvemos el List de usuarios
             return usuarios;
         }
 
         //funcion igual que la anterior de allUsuarios pero con todos los vehiculos
         //devolvemos un arraylist de tipo vehiculos
-        public ArrayList allVehiculos()
+        public List<transversal.vehiculo> allVehiculos()
         {
-            ArrayList vehiculos = new ArrayList();
+            List<transversal.vehiculo> vehiculos = new List<transversal.vehiculo>();
             conexion.Open();
             string cadenaConsulta;
             try
@@ -94,7 +94,7 @@ namespace AccesoDatos
                 conexion.Close();
             }
 
-            //devolvemos el arraylist
+            //devolvemos el List de vehiculos
             return vehiculos;
         }
 
@@ -152,9 +152,9 @@ namespace AccesoDatos
         }
 
         //funcion que devuelve todos los alquileres de un usuario en forma de arraylist
-        public ArrayList allAlquileres(int idu)
+        public List<transversal.alquilan> allAlquileres(int idu)
         {
-            ArrayList alquileres = new ArrayList();
+            List<transversal.alquilan> alquileres = new List<transversal.alquilan>();
             conexion.Open();
             string cadenaConsulta;
             try
@@ -176,13 +176,13 @@ namespace AccesoDatos
             {
                 conexion.Close();
             }
-            //devolvemos el arraylist de alquileres
+            //devolvemos el List de alquileres
             return alquileres;
         }
 
         //funcion que filtra los resultados de busqueda, un lio de ifs, solo puse 3 filtros
         //para no complicarme mas la vida
-        public ArrayList buscarVehiculos(string modelo, string combustible, double precio)
+        public List<transversal.vehiculo> buscarVehiculos(string modelo, string combustible, double precio)
         {
             String cadenaConsulta = null;
             //condiciones de busqueda
@@ -214,7 +214,7 @@ namespace AccesoDatos
             }
 
             //con la sentencia slq hecha a medida se rellena el arraylist
-            ArrayList vehiculos = new ArrayList();
+            List<transversal.vehiculo> vehiculos = new List<transversal.vehiculo>();
             conexion.Open();
                 //Formar la sentencia SQL, un SELECT en este caso
                 SqlDataReader myReader = null;
@@ -264,7 +264,7 @@ namespace AccesoDatos
 
         //funcion que inserta uno o varios vehiculos desde un XML leido/os en la logica de negocio
         //recibe un arraylist y los va insertando segun los lee
-        public void insertarVehiculos (ArrayList vehiculos)
+        public void insertarVehiculos (List<transversal.vehiculo> vehiculos)
         {
             string cadenaConsulta;
             conexion.Open();

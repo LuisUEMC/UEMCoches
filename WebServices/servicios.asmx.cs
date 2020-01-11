@@ -39,15 +39,8 @@ namespace WebServices
         [WebMethod]
         public List<vehiculo> WSMostrarVehiculos()
         {
-            ArrayList vehiculos = c.mostrarVehiculos();
-            List<vehiculo> vehiculos2 = new List<vehiculo>(vehiculos.Count);
-            for (int i=0; i<vehiculos.Count; i++)
-            {
-                vehiculo ve = (vehiculo)vehiculos[i];
-                vehiculos2.Add(new vehiculo(ve.GSNombre, ve.GSAno, ve.GSPrestaciones, ve.GSDisponible, ve.GSColor, ve.GSPuertas, ve.GSCombustible, ve.GSValoracion, ve.GSPrecio, ve.GSIdVehiculo));
-            }
-
-            return vehiculos2;
+            List<vehiculo> vehiculos = c.mostrarVehiculos();
+            return vehiculos;
         }
 
         [WebMethod]
@@ -65,29 +58,15 @@ namespace WebServices
         [WebMethod]
         public List<alquilan> WSMostrarAlquileres(int idu)
         {
-            ArrayList alquileres = c.mostrarAlquileres(idu);
-            List<alquilan> alquileres2 = new List<alquilan>(alquileres.Count);
-            for (int i = 0; i < alquileres.Count; i++)
-            {
-                alquilan al = (alquilan)alquileres[i];
-                alquileres2.Add(new alquilan(al.GSidCoche, al.GSidUsuario, al.GSfAlquiler, al.GSfFin));
-            }
-
-            return alquileres2;
+            List<alquilan> alquileres = c.mostrarAlquileres(idu);
+            return alquileres;
         }
 
         [WebMethod]
         public List<vehiculo> WSBuscarVehiculos(string modelo, string combustible, double precio)
-        {
-            ArrayList vehiculos = c.buscarVehiculos(modelo, combustible, precio);
-            List<vehiculo> vehiculos2 = new List<vehiculo>(vehiculos.Count);
-            for (int i = 0; i < vehiculos.Count; i++)
-            {
-                vehiculo ve = (vehiculo)vehiculos[i];
-                vehiculos2.Add(new vehiculo(ve.GSNombre, ve.GSAno, ve.GSPrestaciones, ve.GSDisponible, ve.GSColor, ve.GSPuertas, ve.GSCombustible, ve.GSValoracion, ve.GSPrecio, ve.GSIdVehiculo));
-            }
-
-            return vehiculos2;
+        { 
+            List<vehiculo> vehiculos = c.buscarVehiculos(modelo, combustible, precio);
+            return vehiculos;
         }
 
         [WebMethod]
@@ -113,7 +92,5 @@ namespace WebServices
         {
             c.guardarVehiculo(modelo, ano, prestaciones, color, puertas, combustible, valoracion, precio);
         }
-
-
     }
 }

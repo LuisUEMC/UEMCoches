@@ -25,7 +25,7 @@ namespace logicaNegocio
         //funcion que comprueba el login
         public int login(string user, string pass)
         {
-            ArrayList usuarios = new ArrayList();
+            List<transversal.usuario> usuarios = new List<transversal.usuario>();
             usuarios = f.allUsuarios();
 
             for (int i = 0; i<usuarios.Count; i++)
@@ -40,10 +40,10 @@ namespace logicaNegocio
         }
 
         //funcion que devuelve todos los vehiculos
-        public ArrayList mostrarVehiculos()
+        public List<transversal.vehiculo> mostrarVehiculos()
         {
             //creamos un arrayList de vehiculos, los cargamos desde la funcion de acceso a datos y los devolvemos
-            ArrayList vehiculos = new ArrayList();
+            List<transversal.vehiculo> vehiculos = new List<transversal.vehiculo>();
             vehiculos = f.allVehiculos();
             return vehiculos;
         }
@@ -64,17 +64,17 @@ namespace logicaNegocio
         }
 
         //funcion que muestra los alquileres nuestros
-        public ArrayList mostrarAlquileres(int idu)
+        public List<transversal.alquilan> mostrarAlquileres(int idu)
         {
-            ArrayList alquileres = new ArrayList();
+            List<transversal.alquilan> alquileres = new List<transversal.alquilan>();
             alquileres = f.allAlquileres(idu);
             return alquileres;
         }
 
         //funcion que se encarga del filtro de vehiculos para el usuario
-        public ArrayList buscarVehiculos(string modelo, string combustible, double precio)
+        public List<transversal.vehiculo> buscarVehiculos(string modelo, string combustible, double precio)
         {
-            ArrayList vehiculosBuscados = new ArrayList();
+            List<transversal.vehiculo> vehiculosBuscados = new List<transversal.vehiculo>();
             vehiculosBuscados = f.buscarVehiculos(modelo, combustible, precio);
             return vehiculosBuscados;
         }
@@ -97,7 +97,7 @@ namespace logicaNegocio
         public void guardarCochesXML()
         {
             //llamamos a la funcion que nos devuelve todos los coches
-            ArrayList vehiculos = new ArrayList();
+            List<transversal.vehiculo> vehiculos = new List<transversal.vehiculo>();
             vehiculos = mostrarVehiculos();
 
             //creacion del documento xml
@@ -143,7 +143,7 @@ namespace logicaNegocio
         //para su insercion en la base de datos
         public void guardarCochesBD(string fileName)
         {
-            ArrayList vehiculos = new ArrayList();
+            List<transversal.vehiculo> vehiculos = new List<transversal.vehiculo>();
             if (File.Exists(fileName))
             {
                 XDocument documento = XDocument.Load(fileName);
