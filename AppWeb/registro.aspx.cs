@@ -1,5 +1,4 @@
 ﻿using System;
-using logicaNegocio;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -13,7 +12,7 @@ namespace AppWeb
 {
     public partial class Registro : System.Web.UI.Page
     {
-        logicaNegocio.clase c = new logicaNegocio.clase();
+        WSServicios.serviciosSoapClient ws = new WSServicios.serviciosSoapClient();
         protected void Page_Load(object sender, EventArgs e)
         {
             
@@ -38,15 +37,15 @@ namespace AppWeb
                 {
                     //comprobamos que el nombre de usuario ya existe llamando a la funcion que busca un usuario
                     //en funcion de su nombre de usuario
-                    transversal.usuario usu = c.buscarUsuario(tbUsuario.Text);
+                    WSServicios.usuario usu = ws.WSBuscarUsuario(tbUsuario.Text);
 
                     //si devuelve null es que no existe con lo cual se registra con exito
                     if (usu == null)
                     {
                         //inicializamos las clases
-                        logicaNegocio.clase c = new logicaNegocio.clase();
+                        WSServicios.serviciosSoapClient ws = new WSServicios.serviciosSoapClient();
 
-                        c.registrarUsuario(tbNombre.Text, tbApellidos.Text, Convert.ToInt32(tbEdad.Text), tbUsuario.Text, tbPass.Text);
+                        ws.WSRegistrarUsuario(tbNombre.Text, tbApellidos.Text, Convert.ToInt32(tbEdad.Text), tbUsuario.Text, tbPass.Text);
 
                         lblInfo.Text = "Te has registrado con exito!!....Redirigiendo....";
 

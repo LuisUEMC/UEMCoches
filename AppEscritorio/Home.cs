@@ -12,7 +12,7 @@ namespace AppEscritorio
 {
     public partial class Home : Form
     {
-        logicaNegocio.clase c = new logicaNegocio.clase();
+        WSServicios.serviciosSoapClient ws = new WSServicios.serviciosSoapClient();
         public Home()
         {
               InitializeComponent();
@@ -27,7 +27,7 @@ namespace AppEscritorio
         //con este boton simplemente llamamos a la funcion que guarda los coches en un XML
         private void btnGuardarCoches_Click(object sender, EventArgs e)
         {
-            c.guardarCochesXML();
+            ws.WSguardarCochesXML();
             lblInfo.Text = "XML creado con exito!";
         }
 
@@ -40,7 +40,7 @@ namespace AppEscritorio
             dialog.Multiselect = false;
             if (dialog.ShowDialog() == DialogResult.OK)
             {
-                c.guardarCochesBD(dialog.FileName);
+                ws.WSguardarCochesBD(dialog.FileName);
                 lblInfo.Text = "vehiculos añadidos con exito!";
             }
         }

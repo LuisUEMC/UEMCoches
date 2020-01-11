@@ -4,6 +4,7 @@ using System.Text;
 
 namespace transversal
 {
+    [Serializable]
     public class vehiculo
     {
         private string modelo;
@@ -16,7 +17,12 @@ namespace transversal
         private int valoracion;
         private double precio;
         private int id_vehiculo;
+        private string resultado;
 
+        public vehiculo()
+        {
+
+        }
         public vehiculo(string modelo, int ano, string prestaciones, bool disponible, string color, int puertas,
             string combustible, int valoracion, double precio, int id_vehiculo)
         {
@@ -30,7 +36,9 @@ namespace transversal
             this.valoracion = valoracion;
             this.precio = precio;
             this.id_vehiculo = id_vehiculo;
+            resultado = "";
         }
+
 
         public string GSNombre
         {
@@ -99,14 +107,14 @@ namespace transversal
         {
             return "</br>------------------------------------------" +
                    "</br>Disponible: " + Disponible() +
-                   "</br>Modelo: " + this.modelo +
-                   "</br>Año: " + this.ano +
-                   "</br>Color: " + this.color +
-                   "</br>Puertas: " + this.puertas +
-                   "</br>Combustible: " + this.combustible +
-                   "</br></br>Valoracion: " + this.valoracion + "/5" +
-                   "</br>Precio: " + this.precio + " €" +
-                   "</br></br>Prestaciones:</br>" + this.prestaciones +
+                   "</br>Modelo: " + GSNombre +
+                   "</br>Año: " + GSAno +
+                   "</br>Color: " + GSColor +
+                   "</br>Puertas: " + GSPuertas +
+                   "</br>Combustible: " + GSCombustible +
+                   "</br></br>Valoracion: " + GSValoracion + "/5" +
+                   "</br>Precio: " + GSPrecio + " €" +
+                   "</br></br>Prestaciones:</br>" + GSPrestaciones +
                    "</br></br>";
         }
 

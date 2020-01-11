@@ -38,6 +38,8 @@
     <Reference Include="System.Data.SqlClient, Version=4.6.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Data.SqlClient.4.8.0\lib\net461\System.Data.SqlClient.dll</HintPath>
     </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -49,6 +51,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Connected Services\WSServicios\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Home.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -87,6 +94,49 @@
     <EmbeddedResource Include="subirCocheManual.resx">
       <DependentUpon>subirCocheManual.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="Connected Services\WSServicios\AppEscritorio.WSServicios.ArrayOfAlquilan.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WSServicios\AppEscritorio.WSServicios.ArrayOfVehiculo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WSServicios\AppEscritorio.WSServicios.usuario.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WSServicios\AppEscritorio.WSServicios.vehiculo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WSServicios\AppEscritorio.WSServicios.WSAlquilarCocheResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WSServicios\AppEscritorio.WSServicios.WSBuscarUsuarioResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WSServicios\AppEscritorio.WSServicios.WSBuscarVehiculosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WSServicios\AppEscritorio.WSServicios.WSguardarCochesBDResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WSServicios\AppEscritorio.WSServicios.WSGuardarVehiculoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WSServicios\AppEscritorio.WSServicios.WSLoginResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WSServicios\AppEscritorio.WSServicios.WSMostrarAlquileresResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WSServicios\AppEscritorio.WSServicios.WSMostrarVehiculoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WSServicios\AppEscritorio.WSServicios.WSMostrarVehiculosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WSServicios\AppEscritorio.WSServicios.WSRegistrarUsuarioResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WSServicios\servicios.wsdl" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -102,14 +152,25 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\logicaNegocio\logicaNegocio.csproj">
-      <Project>{a09ff9f0-6c77-424a-bd5e-9f52c4c8f98a}</Project>
-      <Name>logicaNegocio</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\transversal\transversal.csproj">
-      <Project>{9d3e4367-74c8-4314-b30e-ba47fbeff798}</Project>
-      <Name>transversal</Name>
-    </ProjectReference>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\WSServicios\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\WSServicios\servicios.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\WSServicios\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\WSServicios\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\WSServicios\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

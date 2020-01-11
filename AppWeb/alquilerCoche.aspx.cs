@@ -11,7 +11,7 @@ namespace AppWeb
 {
     public partial class alquilerCoche : System.Web.UI.Page
     {
-        logicaNegocio.clase c = new logicaNegocio.clase();
+        WSServicios.serviciosSoapClient ws = new WSServicios.serviciosSoapClient();
         protected void Page_Load(object sender, EventArgs e)
         {
             string id_usuario = Request.QueryString["idu"];
@@ -22,7 +22,7 @@ namespace AppWeb
             }
             else
             {
-                transversal.vehiculo v = c.mostrarVehiculo(Convert.ToInt32(id_coche));
+                WSServicios.vehiculo v = ws.WSMostrarVehiculo(Convert.ToInt32(id_coche));
 
                 lblTitulo.Text = v.GSNombre;
                 lblModelo.Text = v.GSNombre;
@@ -53,7 +53,7 @@ namespace AppWeb
         {
             string id_usuario = Request.QueryString["idu"];
             string id_coche = Request.QueryString["idc"];
-            c.alquilarCoche(Convert.ToInt32(id_coche), Convert.ToInt32(id_usuario), tbFAlquiler.Text, tbFFin.Text);
+            ws.WSAlquilarCoche(Convert.ToInt32(id_coche), Convert.ToInt32(id_usuario), tbFAlquiler.Text, tbFFin.Text);
 
             lblInfo.Text = "Has alquilado el coche con exito!";
             Thread.Sleep(1500);

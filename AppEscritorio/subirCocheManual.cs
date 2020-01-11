@@ -36,8 +36,8 @@ namespace AppEscritorio
 
         private void btnAgregarVehiculo_Click(object sender, EventArgs e)
         {
-            logicaNegocio.clase c = new logicaNegocio.clase();
-            c.guardarVehiculo(tbModelo.Text, Convert.ToInt32(tbAno.Text), tbPrestaciones.Text, tbColor.Text, Convert.ToInt32(tbPuertas.Text), tbCombustible.Text, Convert.ToInt32(dddlValoracion.Value),Convert.ToDouble(tbPrecio.Text));
+            WSServicios.serviciosSoapClient ws = new WSServicios.serviciosSoapClient();
+            ws.WSGuardarVehiculo(tbModelo.Text, Convert.ToInt32(tbAno.Text), tbPrestaciones.Text, tbColor.Text, Convert.ToInt32(tbPuertas.Text), tbCombustible.Text, Convert.ToInt32(dddlValoracion.Value),Convert.ToDouble(tbPrecio.Text));
             lblInfo.Text = "Vehiculo añadido correctamente";
         }
     }

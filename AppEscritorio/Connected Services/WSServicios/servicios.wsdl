@@ -1,0 +1,517 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="WSRegistrarUsuario">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="nombre" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="apellidos" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="edad" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="user" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pass" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WSRegistrarUsuarioResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="WSLogin">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="user" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pass" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WSLoginResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="WSLoginResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WSMostrarVehiculos">
+        <s:complexType />
+      </s:element>
+      <s:element name="WSMostrarVehiculosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WSMostrarVehiculosResult" type="tns:ArrayOfVehiculo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfVehiculo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="vehiculo" nillable="true" type="tns:vehiculo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="vehiculo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="GSNombre" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="GSAno" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="GSPrestaciones" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="GSDisponible" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="GSColor" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="GSPuertas" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="GSCombustible" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="GSValoracion" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="GSPrecio" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="GSIdVehiculo" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="WSMostrarVehiculo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idv" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WSMostrarVehiculoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WSMostrarVehiculoResult" type="tns:vehiculo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WSAlquilarCoche">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idc" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="idu" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="fa" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ff" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WSAlquilarCocheResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="WSMostrarAlquileres">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idu" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WSMostrarAlquileresResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WSMostrarAlquileresResult" type="tns:ArrayOfAlquilan" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfAlquilan">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="alquilan" nillable="true" type="tns:alquilan" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="alquilan">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="GSidCoche" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="GSidUsuario" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="GSfAlquiler" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="GSfFin" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="WSBuscarVehiculos">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="modelo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="combustible" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="precio" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WSBuscarVehiculosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WSBuscarVehiculosResult" type="tns:ArrayOfVehiculo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WSBuscarUsuario">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="usuario" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WSBuscarUsuarioResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WSBuscarUsuarioResult" type="tns:usuario" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="usuario">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="GSNombre" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="GSApellidos" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="GSEdad" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="GSUser" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="GSPass" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="GSTipo" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="GSIdUsuario" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="WSguardarCochesXML">
+        <s:complexType />
+      </s:element>
+      <s:element name="WSguardarCochesXMLResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="WSguardarCochesBD">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="fileName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WSguardarCochesBDResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="WSGuardarVehiculo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="modelo" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="ano" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="prestaciones" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="color" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="puertas" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="combustible" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="valoracion" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="precio" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WSGuardarVehiculoResponse">
+        <s:complexType />
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="WSRegistrarUsuarioSoapIn">
+    <wsdl:part name="parameters" element="tns:WSRegistrarUsuario" />
+  </wsdl:message>
+  <wsdl:message name="WSRegistrarUsuarioSoapOut">
+    <wsdl:part name="parameters" element="tns:WSRegistrarUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="WSLoginSoapIn">
+    <wsdl:part name="parameters" element="tns:WSLogin" />
+  </wsdl:message>
+  <wsdl:message name="WSLoginSoapOut">
+    <wsdl:part name="parameters" element="tns:WSLoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="WSMostrarVehiculosSoapIn">
+    <wsdl:part name="parameters" element="tns:WSMostrarVehiculos" />
+  </wsdl:message>
+  <wsdl:message name="WSMostrarVehiculosSoapOut">
+    <wsdl:part name="parameters" element="tns:WSMostrarVehiculosResponse" />
+  </wsdl:message>
+  <wsdl:message name="WSMostrarVehiculoSoapIn">
+    <wsdl:part name="parameters" element="tns:WSMostrarVehiculo" />
+  </wsdl:message>
+  <wsdl:message name="WSMostrarVehiculoSoapOut">
+    <wsdl:part name="parameters" element="tns:WSMostrarVehiculoResponse" />
+  </wsdl:message>
+  <wsdl:message name="WSAlquilarCocheSoapIn">
+    <wsdl:part name="parameters" element="tns:WSAlquilarCoche" />
+  </wsdl:message>
+  <wsdl:message name="WSAlquilarCocheSoapOut">
+    <wsdl:part name="parameters" element="tns:WSAlquilarCocheResponse" />
+  </wsdl:message>
+  <wsdl:message name="WSMostrarAlquileresSoapIn">
+    <wsdl:part name="parameters" element="tns:WSMostrarAlquileres" />
+  </wsdl:message>
+  <wsdl:message name="WSMostrarAlquileresSoapOut">
+    <wsdl:part name="parameters" element="tns:WSMostrarAlquileresResponse" />
+  </wsdl:message>
+  <wsdl:message name="WSBuscarVehiculosSoapIn">
+    <wsdl:part name="parameters" element="tns:WSBuscarVehiculos" />
+  </wsdl:message>
+  <wsdl:message name="WSBuscarVehiculosSoapOut">
+    <wsdl:part name="parameters" element="tns:WSBuscarVehiculosResponse" />
+  </wsdl:message>
+  <wsdl:message name="WSBuscarUsuarioSoapIn">
+    <wsdl:part name="parameters" element="tns:WSBuscarUsuario" />
+  </wsdl:message>
+  <wsdl:message name="WSBuscarUsuarioSoapOut">
+    <wsdl:part name="parameters" element="tns:WSBuscarUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="WSguardarCochesXMLSoapIn">
+    <wsdl:part name="parameters" element="tns:WSguardarCochesXML" />
+  </wsdl:message>
+  <wsdl:message name="WSguardarCochesXMLSoapOut">
+    <wsdl:part name="parameters" element="tns:WSguardarCochesXMLResponse" />
+  </wsdl:message>
+  <wsdl:message name="WSguardarCochesBDSoapIn">
+    <wsdl:part name="parameters" element="tns:WSguardarCochesBD" />
+  </wsdl:message>
+  <wsdl:message name="WSguardarCochesBDSoapOut">
+    <wsdl:part name="parameters" element="tns:WSguardarCochesBDResponse" />
+  </wsdl:message>
+  <wsdl:message name="WSGuardarVehiculoSoapIn">
+    <wsdl:part name="parameters" element="tns:WSGuardarVehiculo" />
+  </wsdl:message>
+  <wsdl:message name="WSGuardarVehiculoSoapOut">
+    <wsdl:part name="parameters" element="tns:WSGuardarVehiculoResponse" />
+  </wsdl:message>
+  <wsdl:portType name="serviciosSoap">
+    <wsdl:operation name="WSRegistrarUsuario">
+      <wsdl:input message="tns:WSRegistrarUsuarioSoapIn" />
+      <wsdl:output message="tns:WSRegistrarUsuarioSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WSLogin">
+      <wsdl:input message="tns:WSLoginSoapIn" />
+      <wsdl:output message="tns:WSLoginSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WSMostrarVehiculos">
+      <wsdl:input message="tns:WSMostrarVehiculosSoapIn" />
+      <wsdl:output message="tns:WSMostrarVehiculosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WSMostrarVehiculo">
+      <wsdl:input message="tns:WSMostrarVehiculoSoapIn" />
+      <wsdl:output message="tns:WSMostrarVehiculoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WSAlquilarCoche">
+      <wsdl:input message="tns:WSAlquilarCocheSoapIn" />
+      <wsdl:output message="tns:WSAlquilarCocheSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WSMostrarAlquileres">
+      <wsdl:input message="tns:WSMostrarAlquileresSoapIn" />
+      <wsdl:output message="tns:WSMostrarAlquileresSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WSBuscarVehiculos">
+      <wsdl:input message="tns:WSBuscarVehiculosSoapIn" />
+      <wsdl:output message="tns:WSBuscarVehiculosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WSBuscarUsuario">
+      <wsdl:input message="tns:WSBuscarUsuarioSoapIn" />
+      <wsdl:output message="tns:WSBuscarUsuarioSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WSguardarCochesXML">
+      <wsdl:input message="tns:WSguardarCochesXMLSoapIn" />
+      <wsdl:output message="tns:WSguardarCochesXMLSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WSguardarCochesBD">
+      <wsdl:input message="tns:WSguardarCochesBDSoapIn" />
+      <wsdl:output message="tns:WSguardarCochesBDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WSGuardarVehiculo">
+      <wsdl:input message="tns:WSGuardarVehiculoSoapIn" />
+      <wsdl:output message="tns:WSGuardarVehiculoSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="serviciosSoap" type="tns:serviciosSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="WSRegistrarUsuario">
+      <soap:operation soapAction="http://tempuri.org/WSRegistrarUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WSLogin">
+      <soap:operation soapAction="http://tempuri.org/WSLogin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WSMostrarVehiculos">
+      <soap:operation soapAction="http://tempuri.org/WSMostrarVehiculos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WSMostrarVehiculo">
+      <soap:operation soapAction="http://tempuri.org/WSMostrarVehiculo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WSAlquilarCoche">
+      <soap:operation soapAction="http://tempuri.org/WSAlquilarCoche" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WSMostrarAlquileres">
+      <soap:operation soapAction="http://tempuri.org/WSMostrarAlquileres" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WSBuscarVehiculos">
+      <soap:operation soapAction="http://tempuri.org/WSBuscarVehiculos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WSBuscarUsuario">
+      <soap:operation soapAction="http://tempuri.org/WSBuscarUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WSguardarCochesXML">
+      <soap:operation soapAction="http://tempuri.org/WSguardarCochesXML" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WSguardarCochesBD">
+      <soap:operation soapAction="http://tempuri.org/WSguardarCochesBD" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WSGuardarVehiculo">
+      <soap:operation soapAction="http://tempuri.org/WSGuardarVehiculo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="serviciosSoap12" type="tns:serviciosSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="WSRegistrarUsuario">
+      <soap12:operation soapAction="http://tempuri.org/WSRegistrarUsuario" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WSLogin">
+      <soap12:operation soapAction="http://tempuri.org/WSLogin" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WSMostrarVehiculos">
+      <soap12:operation soapAction="http://tempuri.org/WSMostrarVehiculos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WSMostrarVehiculo">
+      <soap12:operation soapAction="http://tempuri.org/WSMostrarVehiculo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WSAlquilarCoche">
+      <soap12:operation soapAction="http://tempuri.org/WSAlquilarCoche" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WSMostrarAlquileres">
+      <soap12:operation soapAction="http://tempuri.org/WSMostrarAlquileres" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WSBuscarVehiculos">
+      <soap12:operation soapAction="http://tempuri.org/WSBuscarVehiculos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WSBuscarUsuario">
+      <soap12:operation soapAction="http://tempuri.org/WSBuscarUsuario" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WSguardarCochesXML">
+      <soap12:operation soapAction="http://tempuri.org/WSguardarCochesXML" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WSguardarCochesBD">
+      <soap12:operation soapAction="http://tempuri.org/WSguardarCochesBD" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WSGuardarVehiculo">
+      <soap12:operation soapAction="http://tempuri.org/WSGuardarVehiculo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="servicios">
+    <wsdl:port name="serviciosSoap" binding="tns:serviciosSoap">
+      <soap:address location="https://localhost:44301/servicios.asmx" />
+    </wsdl:port>
+    <wsdl:port name="serviciosSoap12" binding="tns:serviciosSoap12">
+      <soap12:address location="https://localhost:44301/servicios.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -11,7 +11,7 @@ namespace AppWeb
     public partial class home : System.Web.UI.Page
     {
         //inicializamos las funciones de la logica de negocio
-        logicaNegocio.clase c = new logicaNegocio.clase();
+        WSServicios.serviciosSoapClient ws = new WSServicios.serviciosSoapClient();
         protected void Page_Load(object sender, EventArgs e)
         {
             //comprobamos que se ha hecho login, si no es asi, redirecciona al login
@@ -23,8 +23,7 @@ namespace AppWeb
             else
             {
                 //cargamos todos los vehiculos de la base de datos
-                ArrayList vehiculos = new ArrayList();
-                vehiculos = c.mostrarVehiculos();
+                ArrayList vehiculos = new ArrayList(ws.WSMostrarVehiculos());
 
                 //inicializamos los componentes que vamos a utilizar dinamicamente
                 List<Button> buttons = new List<Button>();
@@ -34,7 +33,7 @@ namespace AppWeb
                 //rellenamos los componentes con los datos de los vehiculos
                 for (int i = 0; i < vehiculos.Count; i++)
                 {
-                    transversal.vehiculo ve = (transversal.vehiculo)vehiculos[i];
+                    WSServicios.vehiculo ve = (WSServicios.vehiculo)vehiculos[i];
 
                     //boton de seleccionar coche
                     Button newButton = new Button();
@@ -44,8 +43,25 @@ namespace AppWeb
                     buttons.Add(newButton);
 
                     //label
+                    string disponible;
+                    if (ve.GSDisponible == true)
+                    {
+                        disponible = "SI";
+                    }
+                    else { disponible = "NO";  }
+
                     Label lblCaracteristicas = new Label();
-                    lblCaracteristicas.Text = ve.mostrarCaracteristicas();
+                    lblCaracteristicas.Text = "</br>------------------------------------------" +
+                   "</br>Disponible: " + disponible +
+                   "</br>Modelo: " + ve.GSNombre +
+                   "</br>Año: " + ve.GSAno +
+                   "</br>Color: " + ve.GSColor +
+                   "</br>Puertas: " + ve.GSPuertas +
+                   "</br>Combustible: " + ve.GSCombustible +
+                   "</br></br>Valoracion: " + ve.GSValoracion + "/5" +
+                   "</br>Precio: " + ve.GSPrecio + " €" +
+                   "</br></br>Prestaciones:</br>" + ve.GSPrestaciones +
+                   "</br></br>"; ;
                     labels.Add(lblCaracteristicas);
 
                     //imagen
@@ -77,8 +93,8 @@ namespace AppWeb
         protected void btnBuscar_Click(object sender, EventArgs e)
         {
             Panel1.Controls.Clear();
-            ArrayList vehiculos = new ArrayList();
-            vehiculos = c.buscarVehiculos(tbModelo.Text, tbcombustible.Text, Convert.ToDouble(tbPrecio.Text));
+
+            ArrayList vehiculos = new ArrayList(ws.WSBuscarVehiculos(tbModelo.Text, tbcombustible.Text, Convert.ToDouble(tbPrecio.Text)));
 
             //inicializamos los componentes
             List<Button> buttons = new List<Button>();
@@ -87,7 +103,7 @@ namespace AppWeb
 
             for (int i = 0; i < vehiculos.Count; i++)
             {
-                transversal.vehiculo ve = (transversal.vehiculo)vehiculos[i];
+                WSServicios.vehiculo ve = (WSServicios.vehiculo)vehiculos[i];
 
                 //boton de seleccionar coche
                 Button newButton = new Button();
@@ -97,7 +113,20 @@ namespace AppWeb
 
                 //label
                 Label lblCaracteristicas = new Label();
-                lblCaracteristicas.Text = ve.mostrarCaracteristicas();
+                string disponible;
+                if (ve.GSDisponible == true) { disponible = "SI"; } else { disponible = "NO"; }
+
+                lblCaracteristicas.Text = "</br>------------------------------------------" +
+               "</br>Disponible: " + disponible +
+               "</br>Modelo: " + ve.GSNombre +
+               "</br>Año: " + ve.GSAno +
+               "</br>Color: " + ve.GSColor +
+               "</br>Puertas: " + ve.GSPuertas +
+               "</br>Combustible: " + ve.GSCombustible +
+               "</br></br>Valoracion: " + ve.GSValoracion + "/5" +
+               "</br>Precio: " + ve.GSPrecio + " €" +
+               "</br></br>Prestaciones:</br>" + ve.GSPrestaciones +
+               "</br></br>"; ;
                 labels.Add(lblCaracteristicas);
 
                 //imagen

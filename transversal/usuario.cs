@@ -14,6 +14,10 @@ namespace transversal
         private string tipo;
         private int id_usuario;
 
+        public usuario()
+        {
+
+        }
         public usuario(string nombre, string apellidos, int edad, string user, string pass, int id_usuario, string tipo)
         {
             this.nombre = nombre;

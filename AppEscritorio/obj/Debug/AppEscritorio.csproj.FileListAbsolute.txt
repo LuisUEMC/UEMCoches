@@ -1,12 +1,6 @@
 C:\Users\Luis Burgos Vidales\source\repos\PracticaCochesFinal\AppEscritorio\bin\Debug\AppEscritorio.exe.config
 C:\Users\Luis Burgos Vidales\source\repos\PracticaCochesFinal\AppEscritorio\bin\Debug\AppEscritorio.exe
 C:\Users\Luis Burgos Vidales\source\repos\PracticaCochesFinal\AppEscritorio\bin\Debug\AppEscritorio.pdb
-C:\Users\Luis Burgos Vidales\source\repos\PracticaCochesFinal\AppEscritorio\bin\Debug\logicaNegocio.dll
-C:\Users\Luis Burgos Vidales\source\repos\PracticaCochesFinal\AppEscritorio\bin\Debug\transversal.dll
-C:\Users\Luis Burgos Vidales\source\repos\PracticaCochesFinal\AppEscritorio\bin\Debug\AccesoDatos.dll
-C:\Users\Luis Burgos Vidales\source\repos\PracticaCochesFinal\AppEscritorio\bin\Debug\logicaNegocio.pdb
-C:\Users\Luis Burgos Vidales\source\repos\PracticaCochesFinal\AppEscritorio\bin\Debug\transversal.pdb
-C:\Users\Luis Burgos Vidales\source\repos\PracticaCochesFinal\AppEscritorio\bin\Debug\AccesoDatos.pdb
 C:\Users\Luis Burgos Vidales\source\repos\PracticaCochesFinal\AppEscritorio\obj\Debug\AppEscritorio.csprojAssemblyReference.cache
 C:\Users\Luis Burgos Vidales\source\repos\PracticaCochesFinal\AppEscritorio\obj\Debug\AppEscritorio.login.resources
 C:\Users\Luis Burgos Vidales\source\repos\PracticaCochesFinal\AppEscritorio\obj\Debug\AppEscritorio.Properties.Resources.resources

@@ -131,7 +131,6 @@ C:\Users\Luis Burgos Vidales\source\repos\PracticaCochesFinal\AppWeb\bin\roslyn\
 C:\Users\Luis Burgos Vidales\source\repos\PracticaCochesFinal\AppWeb\bin\Antlr3.Runtime.dll
 C:\Users\Luis Burgos Vidales\source\repos\PracticaCochesFinal\AppWeb\bin\AspNet.ScriptManager.bootstrap.dll
 C:\Users\Luis Burgos Vidales\source\repos\PracticaCochesFinal\AppWeb\bin\AspNet.ScriptManager.jQuery.dll
-C:\Users\Luis Burgos Vidales\source\repos\PracticaCochesFinal\AppWeb\bin\logicaNegocio.dll
 C:\Users\Luis Burgos Vidales\source\repos\PracticaCochesFinal\AppWeb\bin\Microsoft.AspNet.FriendlyUrls.dll
 C:\Users\Luis Burgos Vidales\source\repos\PracticaCochesFinal\AppWeb\bin\Microsoft.AspNet.Web.Optimization.WebForms.dll
 C:\Users\Luis Burgos Vidales\source\repos\PracticaCochesFinal\AppWeb\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
@@ -142,17 +141,12 @@ C:\Users\Luis Burgos Vidales\source\repos\PracticaCochesFinal\AppWeb\bin\Newtons
 C:\Users\Luis Burgos Vidales\source\repos\PracticaCochesFinal\AppWeb\bin\System.Data.SqlClient.dll
 C:\Users\Luis Burgos Vidales\source\repos\PracticaCochesFinal\AppWeb\bin\System.Web.Optimization.dll
 C:\Users\Luis Burgos Vidales\source\repos\PracticaCochesFinal\AppWeb\bin\WebGrease.dll
-C:\Users\Luis Burgos Vidales\source\repos\PracticaCochesFinal\AppWeb\bin\transversal.dll
-C:\Users\Luis Burgos Vidales\source\repos\PracticaCochesFinal\AppWeb\bin\AccesoDatos.dll
-C:\Users\Luis Burgos Vidales\source\repos\PracticaCochesFinal\AppWeb\bin\logicaNegocio.pdb
 C:\Users\Luis Burgos Vidales\source\repos\PracticaCochesFinal\AppWeb\bin\System.Data.SqlClient.xml
 C:\Users\Luis Burgos Vidales\source\repos\PracticaCochesFinal\AppWeb\bin\System.Web.Optimization.xml
 C:\Users\Luis Burgos Vidales\source\repos\PracticaCochesFinal\AppWeb\bin\Newtonsoft.Json.xml
 C:\Users\Luis Burgos Vidales\source\repos\PracticaCochesFinal\AppWeb\bin\Antlr3.Runtime.pdb
 C:\Users\Luis Burgos Vidales\source\repos\PracticaCochesFinal\AppWeb\bin\Microsoft.AspNet.FriendlyUrls.xml
 C:\Users\Luis Burgos Vidales\source\repos\PracticaCochesFinal\AppWeb\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\Luis Burgos Vidales\source\repos\PracticaCochesFinal\AppWeb\bin\transversal.pdb
-C:\Users\Luis Burgos Vidales\source\repos\PracticaCochesFinal\AppWeb\bin\AccesoDatos.pdb
 C:\Users\Luis Burgos Vidales\source\repos\PracticaCochesFinal\AppWeb\bin\es\System.Web.Optimization.resources.dll
 C:\Users\Luis Burgos Vidales\source\repos\PracticaCochesFinal\AppWeb\bin\es\Microsoft.AspNet.FriendlyUrls.resources.dll
 C:\Users\Luis Burgos Vidales\source\repos\PracticaCochesFinal\AppWeb\obj\Debug\AppWeb.csproj.CopyComplete

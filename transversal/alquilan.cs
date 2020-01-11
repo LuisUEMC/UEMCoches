@@ -10,6 +10,11 @@ namespace transversal
         private int id_usuario;
         private string f_alquiler;
         private string f_fin;
+
+        public alquilan()
+        {
+
+        }
         public alquilan(int id_coche, int id_usuario , string f_alquiler, string f_fin)
         {
             this.id_coche = id_coche;

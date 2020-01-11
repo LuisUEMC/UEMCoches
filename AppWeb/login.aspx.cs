@@ -18,9 +18,9 @@ namespace AppWeb
         protected void btnEntrar_Click(object sender, EventArgs e)
         {
             //mandamos el usuario y contraseña a la logica de negocio para que lo valide
-            logicaNegocio.clase c = new logicaNegocio.clase();
+            WSServicios.serviciosSoapClient ws = new WSServicios.serviciosSoapClient();
             int id_usuario;
-            id_usuario = c.login(tbUsuario.Text, tbPass.Text);
+            id_usuario = ws.WSLogin(tbUsuario.Text, tbPass.Text);
             //primera comprobacion de usuario inexistente
             if (id_usuario == 0)
             {
@@ -29,7 +29,7 @@ namespace AppWeb
             else
             {
                 //segunda comprobacion para que no pueda logearse un usuario de tipo admin
-                transversal.usuario usu = c.buscarUsuario(tbUsuario.Text);
+                WSServicios.usuario usu = ws.WSBuscarUsuario(tbUsuario.Text);
                 if (usu.GSTipo != "comun")
                 {
                     lblInfo.Text = "Aqui no puedes entrar como administrador";

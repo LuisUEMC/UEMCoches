@@ -13,7 +13,7 @@ namespace AppEscritorio
 {
     public partial class login : Form
     {
-        logicaNegocio.clase c = new logicaNegocio.clase ();
+        
         public login()
         {
             InitializeComponent();
@@ -33,9 +33,9 @@ namespace AppEscritorio
         private void btnLogin_Click(object sender, EventArgs e)
         {
             //inicializamos las funciones de la logica de negocios
-            logicaNegocio.clase c = new logicaNegocio.clase();
+            WSServicios.serviciosSoapClient ws = new WSServicios.serviciosSoapClient();
             int id_usuario = 0;
-            id_usuario = c.login(tbUser.Text, tbPass.Text);
+            id_usuario = ws.WSLogin(tbUser.Text, tbPass.Text);
             //si el id_usuario es 0 significa que no estas registrado o son credenciales incorrectas
             if (id_usuario == 0)
             {
@@ -44,7 +44,7 @@ namespace AppEscritorio
             else
             {
                 //comprobamos que solo los usuarios de tipo administrador puedan acceder aqui
-                transversal.usuario usu = c.buscarUsuario(tbUser.Text);
+                WSServicios.usuario usu = ws.WSBuscarUsuario(tbUser.Text);
                 if (usu.GSTipo != "administrador")
                 {
                     lblInfo.Text = "Aqui no puedes entrar siendo usuario comun";
